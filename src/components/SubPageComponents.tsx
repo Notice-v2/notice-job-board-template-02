@@ -26,13 +26,15 @@ export const SubPageComponents = ({ data }: Props) => {
 
 	const homeHref = process.env.NODE_ENV === 'production' ? '/' : `/?target=${data.projectId}`
 
+	console.log(data, 'data')
+
 	return (
 		<Box>
 			<Navbar meta={data?.metadata.elements ?? []} />
 			<Box as="section" mt={{ base: '30px', lg: '60px' }} w="100%" h="100%">
 				<Flex position="relative" maxW="1260px" justify="center" align="flex-start" mx="auto">
 					<Flex
-						maxW="700px"
+						maxW="960px"
 						margin="auto"
 						w="100%"
 						direction="column"

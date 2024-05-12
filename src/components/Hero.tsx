@@ -1,45 +1,42 @@
 'use client'
 
-import { useSelectedTag } from '@/providers/selectedTagProvider'
-import { Flex, Heading, Text } from '@chakra-ui/react'
-import { useMemo } from 'react'
-import { TagsGroup } from './TagsGroup'
+import { Box, Flex, Heading, Text } from '@chakra-ui/react'
+import { Navbar } from './Navbar'
 
 interface Props {
 	pages: any[]
+	meta: any
 	project?: any
 	accentColor?: string
 }
 
-export const Hero = ({ project, pages, accentColor }: Props) => {
-	const { selectedTag } = useSelectedTag()
-
-	const tags = useMemo(() => pages.reduce((acc, page) => [...acc, ...(page?.tags ?? [])], []), [pages])
-
+export const Hero = ({ project, pages, meta, accentColor }: Props) => {
 	return (
-		<Flex
-			bgColor={project?.heroBackgroundColor ?? 'gray.50'}
-			justify="center"
-			align="center"
-			p={{ base: '40px', md: '80px', lg: '120px' }}
-			direction="column"
-			w="100%"
-			h="fit-content"
-		>
-			<Heading
-				textAlign="center"
-				as="h1"
-				fontSize={{ base: '3xl', lg: '4xl' }}
-				fontWeight="bold"
-				lineHeight="1.2"
-				mb="4"
+		<Box bgImage={'linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)'}>
+			<Navbar meta={meta ?? []} />
+			<Flex
+				justify="center"
+				align="flex-start"
+				p={{ base: '20px', md: '80px', lg: '140px' }}
+				direction="column"
+				w="100%"
+				h="fit-content"
+				maxW={{ base: '100%', md: '70%' }}
 			>
-				{project?.subtitle}
-			</Heading>
-			<Text fontSize="lg" color="gray.500" mb="4">
-				{project?.description}
-			</Text>
-			<TagsGroup tags={tags ?? []} activeTag={selectedTag} accentColor={accentColor} />
-		</Flex>
+				<Heading
+					textAlign="center"
+					as="h1"
+					fontSize={{ base: '4xl', lg: '6xl' }}
+					fontWeight="bold"
+					lineHeight="1.2"
+					mb="4"
+				>
+					{project?.subtitle}
+				</Heading>
+				<Text fontSize="lg" color="gray.500" mb="4">
+					{project?.description}
+				</Text>
+			</Flex>
+		</Box>
 	)
 }

@@ -43,12 +43,11 @@ export const JobListing = ({ pages, accentColor }: Props) => {
 			whileInView={{ opacity: 1 }}
 			viewport={{ once: true }}
 			boxSizing="border-box"
-			mx="auto"
 			mb="10px"
-			p="24px"
+			p={{ base: '12px', md: '24px' }}
 			w="100%"
-			h="fit-content"
 			maxW="960px"
+			h="fit-content"
 			layout
 			layoutRoot
 		>

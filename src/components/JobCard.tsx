@@ -30,7 +30,7 @@ export const JobCard = ({ page, accentColor }: Props) => {
 
 	return (
 		<Link
-			_hover={{ textDecoration: 'none', bgColor: 'gray.50' }}
+			_hover={{ textDecoration: 'none' }}
 			variant="unstyled"
 			href={page?.slug || page?._id}
 			transition={'all 0.3s ease'}
@@ -39,7 +39,6 @@ export const JobCard = ({ page, accentColor }: Props) => {
 				w="100%"
 				h="fit-content"
 				p={{ base: '12px', md: '16px', lg: '24px' }}
-				border="1px solid #EFEFEF"
 				direction={{ base: 'column', md: 'row' }}
 				justify={'space-between'}
 				align="center"
