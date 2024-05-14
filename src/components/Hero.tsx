@@ -24,7 +24,7 @@ export const Hero = ({ project, pages, meta, accentColor }: Props) => {
 				maxW={{ base: '100%', md: '70%' }}
 			>
 				<Heading
-					textAlign="center"
+					textAlign="start"
 					as="h1"
 					fontSize={{ base: '4xl', lg: '6xl' }}
 					fontWeight="bold"
