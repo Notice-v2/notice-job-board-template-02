@@ -5,6 +5,7 @@ import dayjs from 'dayjs'
 import Link from 'next/link'
 import { useMemo } from 'react'
 import { NarrowArrowLeftIcon } from '../icons'
+import { ApplicationForm } from './ApplicationForm'
 import { Navbar } from './Navbar'
 import { SocialShare } from './SocialShare'
 import { PageContent } from './blocks/render-blocks'
@@ -70,12 +71,9 @@ export const SubPageComponents = ({ data }: Props) => {
 							</Heading>
 						</VStack>
 						<PageContent blocks={filteredContent} />
-						<HStack my="32px" justify="flex-start" align="center" w="100%">
+						<HStack my="32px" justify="space-between" align="center" w="100%">
 							<SocialShare />
-							{/* <Button size="sm" onClick={openMail}>
-										{' '}
-										Apply{' '}
-									</Button> */}
+							<ApplicationForm title={data.title} projectId={data?.projectId} />
 						</HStack>
 					</Flex>
 				</Flex>
