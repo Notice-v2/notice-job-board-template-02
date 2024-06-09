@@ -42,7 +42,7 @@ export const SubPageComponents = ({ data }: Props) => {
 						h="fit-content"
 						justify="center"
 						align="flex-start"
-						px={{ base: '24px', md: '0px' }}
+						px={{ base: '24px', md: '12px' }}
 					>
 						<VStack w="100%" mb={'36px'} justify="center" align="flex-start">
 							<HStack wrap="wrap" w="100%" justify="space-between" align="center">
@@ -72,8 +72,8 @@ export const SubPageComponents = ({ data }: Props) => {
 						</VStack>
 						<PageContent blocks={filteredContent} />
 						<HStack my="32px" justify="space-between" align="center" w="100%">
-							<SocialShare />
 							<ApplicationForm title={data.title} projectId={data?.projectId} />
+							<SocialShare />
 						</HStack>
 					</Flex>
 				</Flex>
