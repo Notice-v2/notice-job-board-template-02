@@ -3,14 +3,19 @@
 import { Box, Flex } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
+import { NoticeLogo } from '@/icons'
 import { Link } from '@chakra-ui/next-js'
-import { NoticeLogo } from '../icons'
 
-export const CreatedWithNotice = () => {
+interface Props {
+	shouldHide?: boolean
+}
+
+export const CreatedWithNotice = ({ shouldHide }: Props) => {
+	if (shouldHide) return null
 	return (
 		<StyledBox>
 			<Flex gap={2} justify="center" align="center" w="100%" mx={'auto'}>
-				<Box background={''}>
+				<Box>
 					<NoticeLogo size={16} />
 				</Box>
 
@@ -30,7 +35,7 @@ export const CreatedWithNotice = () => {
 }
 
 const StyledBox = styled(Box)`
-	background-color: white;
+	background-color: #fff0eb;
 	border: 0.5px solid grey;
 	position: fixed; /* Fixes the badge to a position on the screen */
 	bottom: 10px; /* Distance from the bottom of the viewport */
