@@ -1,15 +1,13 @@
 'use client'
 
+import { NarrowArrowLeftIcon } from '@/icons'
 import { Box, Button, Flex, Heading, HStack, Text, VStack } from '@chakra-ui/react'
+import { ApplicationForm, PageContent, SocialShare } from '@notice-org/renderer-helper'
+import '@notice-org/renderer-helper/dist/style.css'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 import { useMemo } from 'react'
-import { NarrowArrowLeftIcon } from '../icons'
-import { ApplicationForm } from './ApplicationForm'
 import { Navbar } from './Navbar'
-import { SocialShare } from './SocialShare'
-import { PageContent } from './blocks/render-blocks'
-
 interface Props {
 	data: any
 }
@@ -73,7 +71,9 @@ export const SubPageComponents = ({ data }: Props) => {
 						<PageContent blocks={filteredContent} />
 						<HStack my="32px" justify="space-between" align="center" w="100%">
 							<ApplicationForm title={data.title} projectId={data?.projectId} />
-							<SocialShare />
+							<Box w="fit-content">
+								<SocialShare />
+							</Box>
 						</HStack>
 					</Flex>
 				</Flex>

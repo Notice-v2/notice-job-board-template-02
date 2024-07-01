@@ -1,4 +1,4 @@
-import { CreatedWithNotice } from '@/components/CreatedWithNotice'
+import { NoticeLabel } from '@/components/NoticeLabel'
 import { Providers } from '@/providers'
 import { API, extractProjectID } from '@/tools/api'
 import { headers } from 'next/headers'
@@ -16,7 +16,7 @@ export default async function RootLayout({
 			<body>
 				<Providers>
 					{children}
-					<CreatedWithNotice shouldHide={hideCreatedWithNotice} />
+					<NoticeLabel shouldHide={hideCreatedWithNotice} />
 				</Providers>
 			</body>
 		</html>
